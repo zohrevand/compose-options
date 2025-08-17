@@ -6,8 +6,6 @@ It’s useful when you want a slider-like UI but with **discrete labeled options
 ## Demo
 <img src="https://raw.githubusercontent.com/zohrevand/compose-options/refs/heads/main/images/options_sample.gif" width="300"/>
 
----
-
 ## Features
 
 - Select options via drag or tap  
@@ -15,5 +13,3 @@ It’s useful when you want a slider-like UI but with **discrete labeled options
 - Compose-first, built with idiomatic patterns (`rememberOptionsRowState`)  
 - State-driven API for clean architecture  
 - Easy to integrate into existing Compose layouts  
-
----
