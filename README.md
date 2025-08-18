@@ -16,6 +16,12 @@ It’s useful when you want a slider-like UI but with **discrete labeled options
 
 ## Usage
 
+Import the library:
+
+```kotlin
+implementation("io.github.zohrevand.options:compose-options:0.1.0")
+```
+
 Here’s a quick example of how to use the `OptionsRow` composable in your project.
 
 ### Step 1: Define your options
@@ -52,9 +58,9 @@ Pass the **`optionsState`** to the **`OptionsRow`** composable.
 @Composable
 fun MyScreen() {
     val options = listOf(
-        Option(trackText = "Option 1", thumbText = "O1"),
-        Option(trackText = "Option 2", thumbText = "O2"),
-        Option(trackText = "Option 3", thumbText = "O3")
+        Option(trackText = "1", thumbText = "Option 1"),
+        Option(trackText = "2", thumbText = "Option 2"),
+        Option(trackText = "3", thumbText = "Option 3"),
     )
 
     val optionsState = rememberOptionsRowState(options)
@@ -89,10 +95,12 @@ Use the **`OptionsDefaults.colors`** to create a custom color scheme.
 OptionsRow(
     state = optionsState,
     colors = OptionsDefaults.colors(
-        containerColor = Color.LightGray,
-        thumbColor = Color.Blue,
-        trackTextColor = Color.DarkGray,
-        thumbTextColor = Color.White
+        containerColor = MaterialTheme.colorScheme.surfaceContainer,
+        thumbColor = primaryColor,
+        activeTrackColor = primaryColor.copy(alpha = 0.3f),
+        inactiveTrackColor = primaryColor.copy(alpha = 0.1f),
+        trackTextColor = MaterialTheme.colorScheme.onSurface,
+        thumbTextColor = MaterialTheme.colorScheme.onPrimary,
     )
 )
 ```
